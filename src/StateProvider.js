@@ -1,4 +1,5 @@
 //setup data layer - for checkout and tracks user
+//utilize as template for other projects
 
 import React, { createContext, useContext, useReducer } from "react";
 
@@ -13,3 +14,6 @@ export const StateProvider = ({ reducer, initialState, children }) => {
     </StateContext.Provider>
   );
 };
+
+//this is how we use it inside a component
+export const useStateValue = () => useContext(StateContext);
