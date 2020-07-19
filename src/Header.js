@@ -7,6 +7,8 @@ import { useStateValue } from "./StateProvider";
 
 function Header() {
   const [{ basket }, dispatch] = useStateValue();
+
+  console.log(basket);
   return (
     <div className="header">
       <Link to="/">
@@ -46,7 +48,7 @@ function Header() {
           <div className="header__optionBasket">
             <ShoppingBasketIcon />
             <span className="header__optionLineTwo header__basketCount">
-              {basket.length}
+              {basket?.length}
             </span>
           </div>
         </Link>
