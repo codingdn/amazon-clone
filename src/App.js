@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
+import Header from "./Header";
 
 //following Clever Programmer tutorial https://www.youtube.com/watch?v=1_IYL9ZMR_Y
 function App() {
@@ -16,9 +17,10 @@ function App() {
             <h1>Login</h1>
           </Route>
           <Route path="/">
+            <Header />
             <h1>Home Page</h1>
           </Route>
-          </Switch>
+        </Switch>
 
         {/**localhost.com/ */}
         {/**localhost.com/checkout */}

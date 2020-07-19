@@ -1,0 +1,10 @@
+.header__logo{
+    width:100px;
+    margin-top: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.header{
+    background-color: #131921;
+}
