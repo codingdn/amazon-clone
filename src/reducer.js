@@ -1,15 +1,5 @@
 export const initialState = {
-  basket: [
-    {
-      id: "143543245",
-      title:
-        "Aucma Stand Mixer,6.5-QT 660W 6-Speed Tilt-Head Food Mixer, Kitchen Electric Mixer with Dough Hook, Wire Whip & Beater (6.5QT, Champagne)",
-      price: 118.99,
-      rating: 3,
-      image:
-        "https://images-na.ssl-images-amazon.com/images/I/61FLLaPm-QL._AC_SL1001_.jpg",
-    },
-  ],
+  basket: [],
   user: null,
 };
 
@@ -19,6 +9,8 @@ export const getBasketTotal = (basket) =>
 const reducer = (state, action) => {
   console.log(action);
   switch (action.type) {
+    case "SET_USER":
+      return { ...state, user: action.user };
     case "ADD_TO_BASKET":
       //LOGIC FOR ADDDING ITEMS TO BASKET
       return { ...state, basket: [...state.basket, action.item] };
