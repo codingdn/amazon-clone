@@ -10,7 +10,11 @@ export const initialState = {
         "https://images-na.ssl-images-amazon.com/images/I/61FLLaPm-QL._AC_SL1001_.jpg",
     },
   ],
+  user: null,
 };
+
+export const getBasketTotal = (basket) =>
+  basket?.reduce((amount, item) => item.price + amount, 0);
 
 const reducer = (state, action) => {
   console.log(action);
@@ -29,7 +33,9 @@ const reducer = (state, action) => {
         //remove item
         newBasket.splice(index, 1);
       } else {
-        console.warn(`Can't remove product(id: ${action.id}) as its not in the cart `);
+        console.warn(
+          `Can't remove product(id: ${action.id}) as its not in the cart `
+        );
       }
       return { ...state, basket: newBasket };
     default:
